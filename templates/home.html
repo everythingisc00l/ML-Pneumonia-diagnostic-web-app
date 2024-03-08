@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Medical AI | Пневмония</title>
+	<link rel="stylesheet" href="./static/css/styles.css">
+	<link rel="stylesheet" href="./static/fonts.css">
+</head>
+<body>
+	<div class="home"> 
+		<div class="app_title">Medical AI | Пневмония</div> 
+		<div class="app_info">Система поддержки принятия решений на базе искусственного интеллекта</div>
+		<div class="app_alert">Не является медицинским приложением. Перепроверяйте результаты</div>
+        <!-- <div class="container_model">
+          <div class="container-item_model">
+            <div class="accuracy_model">
+              Accuracy: 0.986616
+            </div>
+          </div>
+          <div class="container-item_model">
+            <div class="errorrate_model">
+              Error rate: 0.013384
+            </div>
+          </div>
+        </div> -->
+        <!-- <hr class="line_break" /> -->
+		<div class="conf_matrix">
+			<div class="confusion_matrix_result-text">Confussion matrix</div>
+			<div class="your-class">
+				<div class="confusion-matrix">
+					<div class="row">
+						<div class="cell"></div>
+						<div class="cell">Pneumonia</div>
+						<div class="cell">Normal</div>
+					</div>
+					<div class="row">
+						<div class="cell">Pneumonia</div>
+						<div class="cell_true">269</div>
+						<div class="cell_errors">11</div>
+					</div>
+					<div class="row">
+						<div class="cell">Normal</div>
+						<div class="cell_errors">3</div>
+						<div class="cell_false">763</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <hr class="line_break" />
+		<div class="upload_text">Загрузите снимок для классификации в формате png или jpg</div> 
+		<div class="flex_upload_block">
+			<div class="upload_pic_block">
+				<img src="./static/xray_upload.svg" alt="upload" />
+				<div class="upload_pic_text">
+					<label class="link_decoration">Переместите сюда файл для загрузки 
+						</label>
+				</div>
+			</div>
+			<div class="or_block">
+				или
+			</div>
+			<div class="upload_choose_block">
+				<div class="upload_choose_text">Выберите файл</div>
+				<label class="upload_choose_button">Выбрать файл
+					<input type="file" accept="image/png, image/jpeg, image/jpg, image/tif" />
+				</label>
+			</div>
+		</div>
+		<div class="button_container">
+			<button class="button_pred">
+				<a onclick="link_with_args();">Получить результат</a>
+			</button>
+		</div>
+
+		<script type="text/javascript"> 
+			function getOption() { 
+				var file_value = [];
+				const input = document.querySelector('input');
+				const curFiles = input.files;
+				if(curFiles.length === 0) {
+					console.log("file list empty");
+	 
+				} else {
+				for(const file of curFiles) {
+					file_value.push(file.name);
+				}
+				}
+				prefix = "/show-prediction/?"
+				window.output = prefix.concat("file_name=",file_value[0])
+			} 
+		</script> 
+		<script>
+		function link_with_args(){
+		getOption();	
+		console.log("in link_with_args");
+		console.log(window.output);
+		window.location.href = window.output;
+		}		
+		</script>
+	</div>
+
+	</body> 
+	<footer>
+		<div class="footer_text">
+			2023 © Gennadiy Manzhos
+		</div>
+	</footer>
+</html>

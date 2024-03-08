@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Medical AI | Пневмония</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	<link rel="stylesheet" href="/static/fonts.css">
+</head>
+<body>
+<div class="home">
+	<div class="app_title">Medical AI | Пневмония</div> 
+	<div class="app_info">Система поддержки принятия решений на базе искусственного интеллекта</div>
+	<div class="app_alert">Не является медицинским приложением. Перепроверяйте результаты</div>
+	<hr class="line_break" />
+	<div class="upload_text">Вероятный диагноз</div>
+	<div class="upload_flex">
+		<div class="click-zoom">
+			<label>
+			  <input type="checkbox">
+			  <img src="data:image/png;base64,{{ img_base64 }}" alt="Predicted Image">
+			</label>
+		  </div>
+		  <div class="feedback_block">
+			<div class="feedback_text">Прогноз верный?</div>
+			<div class="feedback_box">
+				<div class="feedback_up">
+					<img src="../static/thumbs-up-svgrepo-com.svg" alt="">
+				</div>
+				<div class="feedback_down">
+					<img src="../static/thumbs-down-svgrepo-com.svg" alt="">
+				</div>
+			</div>
+		  </div>
+	</div>
+	<div class="prediction_text"> 
+		<div>Диагноз</div>
+		<div class="prediction_result {% if prediction.prediction_key == 'NORMAL' %}normal{% elif prediction.prediction_key == 'PNEUMONIA' %}pneumonia{% endif %}">
+			{{ prediction.prediction_key }}</div>
+		<div>Вероятность нормы составляет</div>
+		<div class="prediction_result">{{ probability.probability_key }}</div>
+	</div>
+	<div class="button_container">
+		<button class="button_pred" onclick="window.location.href='{{ url_for('home') }}'">Следующее изображение</button>
+	</div>
+	
+</div>
+</body> 
+</html>					 
