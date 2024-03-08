@@ -19,5 +19,6 @@ With ai_kt.bat start app file.
 1. Clone this repo.
 2. Open copied folder and find ai_kt.bat file, then open with any text editor.
 3. Change path in folder to "X:<YOUR_PATH_TO_THIS_FOLDER>\" then save it and close.
+4. You can testt this model with images in **test_images folder**
    
 Run this file and waiting for start in your browser on localhost.
