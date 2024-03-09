@@ -11,7 +11,7 @@ This is the repository for my flask-based web app for diagnostic pneumonia or no
 # Next steps:
 
 1. Creating heat maps.
-2. Creating database for keep statistics from medics.
+2. Connecting database for keep statistics from medics.
 3. Integrating to medical services and train with human feedback on new data.
 
 # Quick start for Windows
