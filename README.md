@@ -2,7 +2,10 @@
 
 Machine Learning app based on flask
 This is the repository for my flask-based web app for diagnostic pneumonia or normal from DICOM medical pictures (currently png/jpg version).
-*This model based on ResNet-50. Accuracy on test **98%**.*
+<hr>
+*This model based on ResNet-50. 
+<hr>Accuracy on test **98%**.*
+<hr>
 ![2024-03-14203232-ezgif com-video-to-gif-converter](https://github.com/everythingisc00l/ML-Pneumonia-diagnostic-web-app/assets/105049664/6cfd7bdf-cc1a-487e-8f8c-fb9fa0a00f0a)
 <br>
 # Next steps:
